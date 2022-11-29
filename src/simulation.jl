@@ -55,7 +55,6 @@ function simulate(rng, simulation)
 	
 	# generate noise
 	noise = gen_noise(deepcopy(rng), noisetype, length(eeg))
-	noise = imfilter(noise, Kernel.gaussian((5,)))
 	noise = reshape(noise, size(eeg))
 	
 	# add noise to data

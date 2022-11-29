@@ -23,7 +23,7 @@ struct RealisticNoise <: Noise end
 Generate noise of a given type t and length n
 """
 function gen_noise(rng::MersenneTwister, t::Union{PinkNoise, RedNoise}, n::Int)
-    return rand(rng, noise.func(n, 1.0))
+    return rand(rng, t.func(n, 1.0))
 end
 
 
